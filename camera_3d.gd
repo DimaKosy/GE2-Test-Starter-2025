@@ -8,6 +8,6 @@ func _process(delta: float) -> void:
 	
 	look_at(lookat_target.global_position)
 	
-	global_position = lerp(global_position,moveto_target.global_position,0.5)
+	global_position = lerp(global_position,moveto_target.global_position,0.2)
 	#global_position += movement_f
 	pass

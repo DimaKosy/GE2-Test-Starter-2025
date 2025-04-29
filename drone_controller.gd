@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 @export var force = 20
-@export var move_force = 10
+@export var move_force = 1
 @export var max_speed = 1
 @export var damping:float = 0.3
 
