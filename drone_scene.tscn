@@ -1,4 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1mt883kcp3i"]
+[gd_scene load_steps=9 format=3 uid="uid://b1mt883kcp3i"]
+
+[ext_resource type="Script" uid="uid://bfrfui6s64dxh" path="res://camera_3d.gd" id="1_jgr37"]
+[ext_resource type="PackedScene" uid="uid://dff1suxr0yf30" path="res://drone.tscn" id="1_qhlfa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jgr37"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -14,7 +17,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrrl7"]
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(0, 0.360784, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qhlfa"]
 material = SubResource("StandardMaterial3D_wrrl7")
@@ -39,5 +42,14 @@ mesh = SubResource("PlaneMesh_qhlfa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_jgr37")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10388, 3.01379)
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("lookat_target", "moveto_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10388, 10.8428)
+script = ExtResource("1_jgr37")
+lookat_target = NodePath("../Drone")
+moveto_target = NodePath("../Drone/Marker3D")
+
+[node name="Drone" parent="." instance=ExtResource("1_qhlfa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15331, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.69243, 7.46829)

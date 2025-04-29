@@ -6,7 +6,6 @@
 [sub_resource type="BoxMesh" id="BoxMesh_etgmo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvgqj"]
-size = Vector3(1, 1, 1.99176)
 
 [node name="Body" type="RigidBody3D"]
 script = ExtResource("1_d5du7")
