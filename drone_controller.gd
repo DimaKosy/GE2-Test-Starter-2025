@@ -54,11 +54,5 @@ func _process(delta: float) -> void:
 	velocity = velocity - (velocity * damping * delta)	#including the damping forces
 	velocity = velocity.limit_length(max_speed)
 	
-	
-	
-	#for(Child in ["PropArm3"]):
-		#pass
-
-	
 	move_and_collide(velocity)
 	pass
