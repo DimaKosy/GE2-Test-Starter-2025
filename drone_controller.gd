@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 		find_child(i).find_child("Propellors").rotation.y += force.length()
 		pass
 		
-	force += Vector3(0,-1,0) #gravity
+	force += Vector3(0,-0.5,0) #gravity  
 	
 	var accel = force / mass	#base it off force relative to mass
 	
