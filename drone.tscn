@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dff1suxr0yf30"]
+
+[ext_resource type="PackedScene" uid="uid://d4atoy8wra66i" path="res://prop_arm.tscn" id="2_d5du7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_etgmo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvgqj"]
+
+[node name="Drone" type="Node3D"]
+
+[node name="Body" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_etgmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+shape = SubResource("BoxShape3D_uvgqj")
+
+[node name="PropArm" parent="Body" instance=ExtResource("2_d5du7")]
+
+[node name="PropArm2" parent="Body" instance=ExtResource("2_d5du7")]
+
+[node name="PropArm3" parent="Body" instance=ExtResource("2_d5du7")]
+
+[node name="PropArm4" parent="Body" instance=ExtResource("2_d5du7")]
