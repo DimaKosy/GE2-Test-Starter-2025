@@ -52,4 +52,4 @@ moveto_target = NodePath("../Drone/Marker3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15331, 0)
 
 [node name="Marker3D" type="Marker3D" parent="Drone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.69243, 7.46829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.69243, -9.29895)

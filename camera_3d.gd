@@ -6,6 +6,8 @@ extends Camera3D
 func _process(delta: float) -> void:
 	var movement_f =  moveto_target.global_position - global_position
 	
-	lookat_target(lookat_target.global_position)
-	global_position += movement_f
+	look_at(lookat_target.global_position)
+	
+	global_position = lerp(global_position,moveto_target.global_position,0.5)
+	#global_position += movement_f
 	pass
